@@ -18,8 +18,3 @@ nextButton.addEventListener('click', () => {
     index = (index < images.length - 1) ? index + 1 : 0;
     showImage(index);
 });
-
-// Optionally add background music (uncomment if desired)
-// const audio = new Audio('background-music.mp3');
-// audio.loop = true;
-// audio.play();
