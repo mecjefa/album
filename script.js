@@ -1,6 +1,25 @@
-let angle = 0;
+const images = document.querySelectorAll('.carousel-images img');
+const carousel = document.querySelector('.carousel-images');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+let index = 0;
 
-function rotatePrism() {
-    angle += 60;
-    document.querySelector('.prism').style.transform = `rotateY(${angle}deg)`;
+function showImage(index) {
+    const offset = -index * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
 }
+
+prevButton.addEventListener('click', () => {
+    index = (index > 0) ? index - 1 : images.length - 1;
+    showImage(index);
+});
+
+nextButton.addEventListener('click', () => {
+    index = (index < images.length - 1) ? index + 1 : 0;
+    showImage(index);
+});
+
+// Optionally add background music (uncomment if desired)
+// const audio = new Audio('background-music.mp3');
+// audio.loop = true;
+// audio.play();
