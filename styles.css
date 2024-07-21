@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
+    overflow: hidden;
 }
 
 .container {
@@ -14,9 +15,10 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    font-size: 2.5em;
+    font-size: 3em;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
 }
 
 .prism-container {
@@ -38,6 +40,7 @@ h1 {
     height: 300px;
     background: #fff;
     backface-visibility: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .face img {
@@ -45,6 +48,11 @@ h1 {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.face img:hover {
+    transform: scale(1.05);
 }
 
 #face1 { transform: rotateY(0deg) translateZ(150px); }
@@ -56,15 +64,23 @@ h1 {
 
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 15px 30px;
+    font-size: 1.2em;
     border: none;
     background-color: #333;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
     background-color: #555;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
