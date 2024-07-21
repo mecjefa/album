@@ -23,21 +23,22 @@ h1 {
 
 .prism-container {
     perspective: 1000px;
+    margin: 0 auto;
 }
 
 .prism {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px; /* Aumente a largura para mais espaço */
+    height: 300px; /* Aumente a altura para mais espaço */
     transform-style: preserve-3d;
     transform: rotateY(0deg);
-    transition: transform 1s;
+    transition: transform 1s, box-shadow 1s;
 }
 
 .face {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 300px; /* Ajuste o tamanho das faces */
+    height: 300px; /* Ajuste o tamanho das faces */
     background: #fff;
     backface-visibility: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,40 +48,42 @@ h1 {
 }
 
 .face img {
-    width: 240px;
-    height: 240px;
+    width: 280px; /* Ajuste o tamanho das imagens */
+    height: 280px; /* Ajuste o tamanho das imagens */
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .face img:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-#face1 { transform: rotateY(0deg) translateZ(125px); }
-#face2 { transform: rotateY(60deg) translateZ(125px); }
-#face3 { transform: rotateY(120deg) translateZ(125px); }
-#face4 { transform: rotateY(180deg) translateZ(125px); }
-#face5 { transform: rotateY(240deg) translateZ(125px); }
-#face6 { transform: rotateY(300deg) translateZ(125px); }
+#face1 { transform: rotateY(0deg) translateZ(150px); } /* Aumente o valor de translateZ */
+#face2 { transform: rotateY(60deg) translateZ(150px); }
+#face3 { transform: rotateY(120deg) translateZ(150px); }
+#face4 { transform: rotateY(180deg) translateZ(150px); }
+#face5 { transform: rotateY(240deg) translateZ(150px); }
+#face6 { transform: rotateY(300deg) translateZ(150px); }
 
 button {
     margin-top: 20px;
     padding: 15px 30px;
     font-size: 1.2em;
     border: none;
-    background-color: #333;
+    background: linear-gradient(45deg, #333, #555);
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #555;
+    background: linear-gradient(45deg, #555, #777);
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeIn {
