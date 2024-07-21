@@ -22,14 +22,14 @@ h1 {
 }
 
 .prism-container {
-    perspective: 1000px;
+    perspective: 1200px; /* Aumente a perspectiva para um efeito mais profundo */
     margin: 0 auto;
 }
 
 .prism {
     position: relative;
-    width: 300px; /* Aumente a largura para mais espaço */
-    height: 300px; /* Aumente a altura para mais espaço */
+    width: 300px;
+    height: 300px;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition: transform 1s, box-shadow 1s;
@@ -37,10 +37,11 @@ h1 {
 
 .face {
     position: absolute;
-    width: 300px; /* Ajuste o tamanho das faces */
-    height: 300px; /* Ajuste o tamanho das faces */
+    width: 300px;
+    height: 300px;
     background: #fff;
     backface-visibility: hidden;
+    overflow: hidden; /* Garante que as imagens não ultrapassem as bordas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
@@ -48,8 +49,8 @@ h1 {
 }
 
 .face img {
-    width: 280px; /* Ajuste o tamanho das imagens */
-    height: 280px; /* Ajuste o tamanho das imagens */
+    width: 100%; /* Ajuste a imagem para se encaixar na face */
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.5s, box-shadow 0.5s;
@@ -60,7 +61,7 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-#face1 { transform: rotateY(0deg) translateZ(150px); } /* Aumente o valor de translateZ */
+#face1 { transform: rotateY(0deg) translateZ(150px); }
 #face2 { transform: rotateY(60deg) translateZ(150px); }
 #face3 { transform: rotateY(120deg) translateZ(150px); }
 #face4 { transform: rotateY(180deg) translateZ(150px); }
